@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wuiisito • Developer & Creator Portfolio</title>
+  
+  <!-- Meta SEO -->
+  <meta name="description" content="Portafolio personal de wuiisito (fabb). Proyectos destacados en JavaScript, TypeScript, Python, Minecraft Mods, Dart y más.">
+  <meta name="author" content="wuiisito">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/69556083?v=4" type="image/x-icon">
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons (Ligero y estético vía unpkg) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Luces ambientales de fondo -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="ambient-glow-3"></div>
+
+  <!-- Barra de navegación -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <img id="nav-avatar" src="https://avatars.githubusercontent.com/u/69556083?v=4" alt="Avatar wuiisito" class="nav-logo-avatar">
+        <span class="nav-logo-text"><span id="nav-username">wuiisito</span>.dev</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#featured" class="nav-link">Destacados</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#skills" class="nav-link">Habilidades</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="open-customizer-btn" class="btn btn-sm btn-customize" title="Personaliza qué proyectos se muestran en tu página">
+          <i data-lucide="sliders-horizontal" style="width: 15px; height: 15px;"></i>
+          <span>Personalizar</span>
+        </button>
+        <a id="nav-github-link" href="https://github.com/wuiisito" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+          <i data-lucide="github" style="width: 15px; height: 15px;"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        
+        <div class="hero-info">
+          <div class="hero-badge-wrap">
+            <span class="status-dot"></span>
+            <span id="hero-status">Desarrollando proyectos creativos</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hola, soy <span id="hero-name" class="gradient-text">fabb</span> 👋
+          </h1>
+
+          <p id="hero-bio" class="hero-bio">
+            Sabrina's megafan & developer. Creando aplicaciones interactivas, mods para Minecraft, bots de Discord y utilidades con código limpio.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#featured" class="btn btn-primary">
+              <i data-lucide="sparkles" style="width: 18px; height: 18px;"></i>
+              <span>Ver Proyectos</span>
+            </a>
+            <a id="hero-github-btn" href="https://github.com/wuiisito" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i data-lucide="external-link" style="width: 18px; height: 18px;"></i>
+              <span>Visitar GitHub</span>
+            </a>
+            <button id="hero-customize-btn" class="btn btn-customize">
+              <i data-lucide="settings" style="width: 18px; height: 18px;"></i>
+              <span>Editar Proyectos</span>
+            </button>
+          </div>
+
+          <!-- Tira de estadísticas en vivo de GitHub -->
+          <div class="stats-strip">
+            <div class="stat-item">
+              <span id="stat-repos" class="stat-value">24</span>
+              <span class="stat-label">Repositorios</span>
+            </div>
+            <div class="stat-item">
+              <span id="stat-followers" class="stat-value">17</span>
+              <span class="stat-label">Seguidores</span>
+            </div>
+            <div class="stat-item">
+              <span id="stat-featured" class="stat-value">5</span>
+              <span class="stat-label">Destacados</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" style="color: var(--accent-green);">100%</span>
+              <span class="stat-label">Open Source</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget Interactivo de Vinilo (Homage a Sabrina Carpenter Vinyl Web App) -->
+        <div class="hero-widget-wrap">
+          <div class="vinyl-widget-card" id="vinyl-card">
+            <div class="vinyl-header">
+              <div class="vinyl-tag">
+                <i data-lucide="disc-3" style="width: 14px; height: 14px;"></i>
+                <span>Interactive Record</span>
+              </div>
+              <span id="vinyl-status-pill" style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--accent-secondary); background: rgba(0, 229, 255, 0.1); padding: 2px 8px; border-radius: 99px;">
+                Toca el vinilo
+              </span>
+            </div>
+
+            <div class="vinyl-turntable">
+              <div class="vinyl-disc" id="vinyl-disc" title="¡Haz clic para girar el vinilo!">
+                <div class="vinyl-label">
+                  <span>SABRINA</span>
+                  <span>VINYL</span>
+                  <div class="vinyl-center-hole"></div>
+                </div>
+              </div>
+
+              <!-- Brazo del tocadiscos -->
+              <div class="tonearm" id="tonearm">
+                <div class="tonearm-base"></div>
+                <div class="tonearm-stick"></div>
+                <div class="tonearm-head"></div>
+              </div>
+            </div>
+
+            <div class="vinyl-info-title">Sabrina Carpenter Vinyl App</div>
+            <div class="vinyl-info-sub">Proyecto destacado • Web Audio & Estética</div>
+
+            <div class="soundwave" id="soundwave">
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+            </div>
+
+            <a href="https://github.com/wuiisito/Sabrina-Carpenter-Vinyl-Web-App" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary" style="width: 100%;">
+              <i data-lucide="disc" style="width: 14px; height: 14px;"></i>
+              <span>Abrir Repositorio</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS (FEATURED SPOTLIGHT) -->
+    <section id="featured" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i data-lucide="star" style="width: 16px; height: 16px; color: var(--accent-gold);"></i>
+            <span>Selección Especial</span>
+          </div>
+          <h2 class="section-title">Proyectos Destacados</h2>
+          <p class="section-desc">
+            Mis creaciones más importantes: desde mods de Minecraft y bots interactivos hasta aplicaciones web de audio.
+          </p>
+        </div>
+
+        <div id="featured-grid" class="featured-grid">
+          <!-- Renderizado dinámicamente desde config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TODOS LOS PROYECTOS CON FILTROS Y BÚSQUEDA -->
+    <section id="projects" class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i data-lucide="folder-git-2" style="width: 16px; height: 16px; color: var(--accent-secondary);"></i>
+            <span>Catálogo Completo</span>
+          </div>
+          <h2 class="section-title">Explorar Todos los Proyectos</h2>
+          <p class="section-desc">
+            Usa los filtros o el buscador para encontrar experimentos, herramientas y código abierto.
+          </p>
+        </div>
+
+        <!-- Barra de controles (Filtros + Buscador) -->
+        <div class="controls-bar">
+          <div class="filter-pills" id="category-filters">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="featured">⭐ Destacados</button>
+            <button class="filter-btn" data-category="web">🌐 Web & Apps</button>
+            <button class="filter-btn" data-category="mods">🎮 Mods & Juegos</button>
+            <button class="filter-btn" data-category="bots">🤖 Bots & Python</button>
+            <button class="filter-btn" data-category="tools">⚡ Herramientas</button>
+            <button class="filter-btn" data-category="mobile">📱 Mobile</button>
+          </div>
+
+          <div class="search-box-wrap">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="project-search" class="search-input" placeholder="Buscar por nombre, tecnología...">
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <span id="results-count" class="results-counter">Mostrando proyectos...</span>
+          <button id="quick-customize-link" class="btn btn-sm btn-customize" style="font-size: 0.78rem;">
+            <i data-lucide="edit-3" style="width: 13px; height: 13px;"></i>
+            <span>Modificar lista</span>
+          </button>
+        </div>
+
+        <!-- Grilla de todos los proyectos -->
+        <div id="all-projects-grid" class="all-projects-grid">
+          <!-- Renderizado dinámico -->
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES & TECH STACK -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i data-lucide="code" style="width: 16px; height: 16px; color: var(--accent-primary);"></i>
+            <span>Tecnologías</span>
+          </div>
+          <h2 class="section-title">Habilidades & Herramientas</h2>
+          <p class="section-desc">Lenguajes y tecnologías con los que desarrollo habitualmente.</p>
+        </div>
+
+        <div id="skills-grid" class="skills-grid">
+          <!-- Renderizado dinámicamente -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL: PERSONALIZADOR DE PROYECTOS -->
+  <div id="customizer-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3>
+          <i data-lucide="sliders" style="color: var(--accent-gold); width: 20px; height: 20px;"></i>
+          <span>Personalizar Proyectos Mostrados</span>
+        </h3>
+        <button id="close-modal-btn" class="modal-close-btn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-alert-box">
+          <strong>💡 Controla tu portafolio en tiempo real:</strong><br>
+          Activa o desactiva qué proyectos quieres mostrar (<b>Mostrar</b>) y cuáles quieres destacar en grande arriba (<b>Destacar</b>). Cuando termines, haz clic en <b>"Copiar config.js"</b> para guardar permanentemente tus cambios en tu repositorio.
+        </div>
+
+        <div class="modal-actions-bar">
+          <button id="sync-github-btn" class="btn btn-sm btn-secondary">
+            <i data-lucide="refresh-cw" style="width: 14px; height: 14px;"></i>
+            <span>Sincronizar repos con GitHub</span>
+          </button>
+          
+          <button id="reset-default-btn" class="btn btn-sm btn-secondary" style="color: #f87171;">
+            <i data-lucide="rotate-ccw" style="width: 14px; height: 14px;"></i>
+            <span>Restaurar por defecto</span>
+          </button>
+        </div>
+
+        <div id="modal-project-list" class="modal-project-list">
+          <!-- Filas de proyectos con checkboxes de visibilidad y destacado -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="copy-config-btn" class="btn btn-primary">
+          <i data-lucide="copy" style="width: 16px; height: 16px;"></i>
+          <span>Copiar código de config.js</span>
+        </button>
+
+        <button id="save-local-btn" class="btn btn-accent">
+          <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+          <span>Aplicar Cambios en Vivo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notificación -->
+  <div id="toast" class="toast-msg">
+    <i data-lucide="check-circle" style="width: 18px; height: 18px; color: var(--accent-green);"></i>
+    <span id="toast-text">¡Configuración copiada al portapapeles!</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-copy">
+        <p>© <span id="current-year">2026</span> <strong>wuiisito (fabb)</strong> • Diseñado para <a href="https://wuiisito.github.io" style="color: var(--accent-secondary); text-decoration: none;">wuiisito.github.io</a></p>
+        <p style="font-size: 0.78rem; margin-top: 4px; color: var(--text-faint);">
+          Para modificar los proyectos mostrados, edita el archivo <code>config.js</code> o usa el botón <b>Personalizar</b>.
+        </p>
+      </div>
+
+      <div class="footer-socials">
+        <a id="footer-github" href="https://github.com/wuiisito" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+        <a href="#featured" class="footer-social-link" title="Ir arriba">
+          <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
